@@ -1,6 +1,7 @@
 # signate-rank-fetcher
 
-signate-rank-fetcherは、SIGNATEから特定のクエストの最新ランキングを自動的に取得するPythonツールです。このツールはSeleniumを使用してログインプロセスを自動化し、ランキングを取得してCSVファイルとして保存します。
+signate-rank-fetcherは、SIGNATEから特定のクエストの最新ランキングを自動的に取得するPythonツールです。  
+このツールはSeleniumを使用してログインプロセスを自動化し、ランキングを取得してCSVファイルとして保存します。
 
 ## 機能
 
