@@ -7,7 +7,7 @@ signate-rank-fetcherは、SIGNATEから特定のクエストの最新ランキ�
 
 - SIGNATEへの自動ログイン
 - 指定されたクエストのランキングを取得
-- 日付で整理されたCSVファイルとしてランキングを保存
+- CSVファイルとしてランキングを保存
 
 ## インストール
 
@@ -37,7 +37,7 @@ signate-rank-fetcherは、SIGNATEから特定のクエストの最新ランキ�
     - 出力ファイルのフォーマット（省略可。デフォルトは`csv`）
     - 出力ファイルのエンコード（省略可。デフォルトは`utf-8`）
 
-    ```plaintext
+    ```.env
     SIGNATE_EMAIL=your_email@example.com
     SIGNATE_PASSWORD=your_password
     QUEST_IDS=10002,10005,10006,10060,10079
@@ -52,10 +52,10 @@ signate-rank-fetcherは、SIGNATEから特定のクエストの最新ランキ�
     python main.py
     ```
 
-2. ランキングは `result_csv_files/yyyyMMdd/` ディレクトリに保存され、ファイル名は `quest_{quest_id}_rankings.csv` の形式になります。
+2. ランキングは `result_csv_files` ディレクトリに保存され、ファイル名は `quest_{quest_id}_rankings_{yyyymmdd}.csv` の形式になります。
 
 3. 取得するクエストを修正したい場合、`.env`ファイル中の`QUEST_IDS`を編集します。
-    ```
+    ```.env
     QUEST_IDS=10002,10005,10006,10060,10079,10080
     ```
 
