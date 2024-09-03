@@ -13,8 +13,8 @@ signate-rank-fetcherは、SIGNATEから特定のクエストの最新ランキ�
 
 1. リポジトリをクローンします：
     ```bash
-    git clone https://github.com/yourusername/signate-ranker.git
-    cd signate-ranker
+    git clone https://github.com/chibi5896/signate-rank-fetcher.git
+    cd signate-rank-fetcher
     ```
 
 2. 仮想環境を作成してアクティブにする（推奨）：
@@ -28,10 +28,11 @@ signate-rank-fetcherは、SIGNATEから特定のクエストの最新ランキ�
     pip install -r requirements.txt
     ```
 
-4. プロジェクトのルートに `.env` ファイルを作成し、SIGNATEの認証情報を記述します：
+4. プロジェクトのルートに `.env` ファイルを作成し、SIGNATEの認証情報および取得対象のクエストを記述します：
     ```plaintext
     SIGNATE_EMAIL=your_email@example.com
     SIGNATE_PASSWORD=your_password
+    QUEST_IDS=10002,10005,10006,10060,10079
     ```
 
 ## 使い方
@@ -44,9 +45,9 @@ signate-rank-fetcherは、SIGNATEから特定のクエストの最新ランキ�
 2. ランキングは `result_csv_files/yyyyMMdd/` ディレクトリに保存され、ファイル名は `quest_{quest_id}_rankings.csv` の形式になります。
 
 3. 取得するクエストを修正したい場合、`.env`ファイル中の`QUEST_IDS`を編集します。
-```
-QUEST_IDS=10002,10005,10006,10060,10079
-```
+    ```
+    QUEST_IDS=10002,10005,10006,10060,10079,10080
+    ```
 
 ## プロジェクト構成
 
