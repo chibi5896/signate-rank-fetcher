@@ -11,5 +11,9 @@ SIGNATE_PASSWORD = os.getenv('SIGNATE_PASSWORD')
 quest_ids_str = os.getenv('QUEST_IDS', '')
 QUEST_IDS = list(map(int, quest_ids_str.split(',')))
 
+# 出力時の設定
+OUTPUT_FORMAT = os.getenv('OUTPUT_FORMAT', 'csv')
+OUTPUT_ENCODING = os.getenv('OUTPUT_ENCODING', 'utf-8')
+
 # GoogleChromeをヘッドレスモードで実行するか
 IS_HEADLESS = True

@@ -28,11 +28,21 @@ signate-rank-fetcherは、SIGNATEから特定のクエストの最新ランキ�
     pip install -r requirements.txt
     ```
 
-4. プロジェクトのルートに `.env` ファイルを作成し、SIGNATEの認証情報および取得対象のクエストを記述します：
+4. プロジェクトのルートに `.env` ファイルを作成し、以下の設定について記述します。
+
+    - SIGNATEの認証情報
+        - メールアドレス
+        - パスワード
+    - 取得対象のクエスト
+    - 出力ファイルのフォーマット（省略可。デフォルトは`csv`）
+    - 出力ファイルのエンコード（省略可。デフォルトは`utf-8`）
+
     ```plaintext
     SIGNATE_EMAIL=your_email@example.com
     SIGNATE_PASSWORD=your_password
     QUEST_IDS=10002,10005,10006,10060,10079
+    OUTPUT_FORMAT=csv  # または 'tsv'
+    OUTPUT_ENCODING=shift-jis  # または 'shift-jis', 'utf-16' など
     ```
 
 ## 使い方

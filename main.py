@@ -21,7 +21,7 @@ def main():
         
         # 例として、各クエストのDataFrameをCSVとして保存
         for quest_id, df in all_rankings.items():
-            save_ranking_to_csv(df, quest_id)
+            save_ranking_to_csv(df, quest_id, OUTPUT_FORMAT, OUTPUT_ENCODING)
     
     finally:
         # WebDriverを終了

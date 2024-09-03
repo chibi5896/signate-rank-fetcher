@@ -10,7 +10,6 @@ from io import StringIO
 class SignateScraper:
     def __init__(self, headless=True):
         chrome_options = Options()
-        print(headless)
         if headless:
             chrome_options.add_argument('--headless')
         self.driver = webdriver.Chrome(options=chrome_options)
