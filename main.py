@@ -1,7 +1,29 @@
+import os
+import pandas as pd
+from datetime import datetime
 from signate_scraper.scraper import SignateScraper
 from signate_scraper.config import *
-from signate_scraper.utils import save_ranking_to_csv
-import pandas as pd
+from signate_scraper.file_utils import check_and_move_old_files
+from signate_scraper.diff_analyzer import compare_dataframes
+
+def save_ranking_to_csv(df, quest_id, output_format, output_encoding):
+    """ランキングをCSV/TSVに保存"""
+    # 現在の日付を取得
+    date_str = datetime.now().strftime('%Y%m%d')
+    
+    # ベースディレクトリ
+    base_dir = 'result_csv_files'
+    os.makedirs(base_dir, exist_ok=True)
+    
+    # 出力ファイル名を設定
+    file_name = f'quest_{quest_id}_rankings_{date_str}.{output_format}'
+    file_path = os.path.join(base_dir, file_name)
+    
+    # 過去ファイルの移動処理と差分チェック
+    if check_and_move_old_files(base_dir, quest_id, output_format, df, compare_dataframes):
+        # 差分がある場合のみ、新しいファイルを保存
+        df.to_csv(file_path, index=False, encoding=output_encoding, sep='\t' if output_format == 'tsv' else ',')
+        print(f'Quest {quest_id} のランキングを {file_path} に保存しました。')
 
 def main():
     # SignateScraperインスタンスを初期化
